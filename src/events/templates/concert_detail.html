@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+
+
+  <style>
+  #tab1{
+    display: none;
+  }
+  #tab2{
+    display: none;
+  }
+  #tab3{
+    display: none;
+  }
+  #tab4{
+    display: none;
+  }
+
+  label{
+    display: inline-block;
+    background-color: #d9d2da;
+  }
+
+  label:hover{
+    color: none;
+    cursor: pointer;
+  }
+
+  input:checked + label{
+    background-color: #d9d2da;
+  }
+
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4 {
+    display:block;
+  }
+  </style>
+
+</head>
+
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+
+
+    <!--**************************************** 공통 메뉴 바 ************************************ -->
+    <div id = "concert_header_wrap">
+      <div class = "logo">
+        <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+      </div>
+      <div class = "menu">
+        <ul class = "menuul">
+          <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+          <li id = "main1"><a class = "sel_mainfont" href="/conall/all">CONCERT</a></li>
+          <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+          <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+          {% if request.session.email != NULL %}
+          <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+          {% else %}
+          <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+          <li id = "main2"><p class="lr">/</p></li>
+          <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+          {% endif %}
+        </ul>
+      </div>
+     </div>
+
+
+    <!--***********************************************공통 메뉴 바 ***************************************** -->
+
+
+
+      <hr class = "c_line" size="1" noshade align="center" width="1519px;" color="#beaebf" />
+
+
+      <div id="concert_menu">
+          <ul class = "con_menuul">
+            <li class="menuli_con"><a class="conm_font" href="/conall/all">전체 콘서트</a></li>
+            <li class="menuli_con"><a class="conm_font" href="/condate/year">일정</a></li>
+            <li class="menuli_con"><a class="conm_font" href="/conart">가수</a></li>
+            <li class="menuli_con"><a class="conm_font" href="/conrank">티켓랭킹</a></li>
+              <li class="temp_con"><img src="/static/images/mainconcert/cashstar.png" /></li>
+              <li class="menuli_con" style = "padding-right: 0px;"><a class="conm_font2" href="/fuel">연료충전</a></li>
+          </ul>
+      </div>
+
+      <div class="banner">
+          <div class ="banner_sear">
+            <form action="/search" method="post">
+              {% csrf_token %}
+              <input class = 'sear' name="search_key" type='text' placeholder="Search"/>
+              <input class = 'sear_b2' type="submit" value=""/>
+            </form>
+
+          </div>
+
+          <div class = "con_details">
+              <a><img src="/static/images/mainconcert/detailsearch.png" name = "img2" onclick= "imgToggle()"/></a>
+          </div>
+      </div>
+
+      <div class = "hide">
+        <div class = "de_search">
+
+          <form action="#" name = "detail_search">
+            <div class="ds">
+              <p class= "ds_text">콘서트명</p>
+              <input class = "dinput_info" type="text" placeholder="콘서트명 입력" onkeypress="JavaScript:press(this.form)">
+            </div>
+            <div class="ds">
+              <p class= "ds_text">&nbsp;&nbsp;&nbsp;가수명</p>
+              <input class = "dinput_info" type="text" placeholder="가수 입력" onkeypress="JavaScript:press(this.form)" >
+            </div>
+
+            <div class="ds">
+              <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일정</p>
+              <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+              <p class = "date_conn"> ~ </p>
+              <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+            </div>
+
+            <div class="ds">
+              <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장소</p>
+              <input class = "dinput_info" type="text" placeholder="장소입력" onkeypress="JavaScript:press(this.form)">
+            </div>
+
+            <div class="ds">
+              <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <button class = "hvr-fade-de" type="submit">검색</button>
+            </div>
+
+
+
+            <!-- <div class ="ems"> -->
+            </div>
+
+          </form>
+
+        </div>
+
+
+
+
+    <div id="wrap">
+      <div class="tag_ing">
+          <img class="img_ing" src= "/static/images/concert_page/ing.png">
+      </div>
+
+      <div class="con_name">
+        <p class="c_name">{{con_name}}</p>
+      </div>
+      
+      <div class="bookmark">
+              <form action="" method="post">
+                {% csrf_token %}
+                <input type="image" src="/static/images/concert_page/bookmark_no.png" name="img3" onclick="ChangeImage()"/>
+              </form>
+        </div>
+
+      <div class="poster">
+        <img class="pos" src="/media/{{con_poster}}"/>
+      </div>
+
+
+      <div id="wrap_s">
+          <div class="c_artist">
+            출연자
+            {% for art in artist %}
+              <a href='' onclick="showPopup('{{art.artist.code}}')"><div class="c_info1">{{art.artist.name}}&nbsp;</div></a>
+            {% endfor %}
+          </div>
+          <div class="c_date">
+            일정
+            {% for i in sche %}
+            <div class="c_info2">{{i.date}}</div>
+            {% endfor %}
+          </div>
+          <div class="c_place">
+            장소
+            <div class="c_info2">{{con_hall}}</div>
+          </div>
+          <div class="c_seat">
+            좌석
+            <div class="c_info2"><img class="seat" src="/static/images/concert_page/seat.png"/>99,000</div>
+          </div>
+          <div class="book_btn">
+            <a href="/ticketing/{{ccode}}"><img class="book" src="/static/images/concert_page/book_button.jpg"/></a>
+          </div>
+      </div>
+
+      <div id="wrap_c">
+
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1" style="margin-top: 15px; margin-bottom: 1px;"><span class="menu_line1">공연상세정보</span></label>
+
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2" style="margin-top: 15px; margin-bottom: 1px;"><span class="menu_line2">공연장 정보</span></label>
+
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3" style="margin-top: 15px; margin-bottom: 1px;"><span class="menu_line2">예매유의사항</span></label>
+
+        <input id="tab4" type="radio" name="tabs">
+        <label for="tab4" style="margin-top: 15px; margin-bottom: 1px;"><span class="menu_line2">댓글</span></label>
+
+        <br/>
+        <hr noshade align="center" width="93%" style="border:solid 1px white;"/>
+
+        <section id="content1">
+          <div class="circle"></div>
+            <p class="date">공연세부일정</p>
+            {% for i in sche %}
+              <p class="date_info">{{i.date}} {{i.time}}</p>
+            {% endfor %}
+
+            <hr noshade align="center" width="93%" style="border:solid 1px white;"/>
+            <div class="circle"></div>
+              <p class="date">상세정보</p>
+              <div class="tab_con">
+                <img src="/static/images/concert_page/pos_large.jpg" style="width:70%;"/>
+              </div>
+        </section>
+
+        <section id="content2">
+          <div class="circle"></div>
+            <p class="date">상세정보</p>
+            <div class="tab_con">
+            <img src="/static/images/concert_page/hall.png" style="width:70%; height:60%"/>
+          </div>
+        </section>
+
+        <section id="content3">
+          <div class="circle"></div>
+          <p class="date">상세정보</p>
+            <div class="tab_con">
+              <img src="/static/images/concert_page/booking.png" style="width:70%;"/>
+            </div>
+        </section>
+
+        <section id="content4">
+          <div class="circle"></div>
+          <p class="date">"공연에 대해 궁금하신 점이나 공유하고 싶은 리뷰를 자유롭게 남겨주세요"</p>
+          <p class="date_info">chaeri@daum.net: 꿀잼</p>
+        </section>
+
+      </div>
+
+<body>
+</body>
+</html>

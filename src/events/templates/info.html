@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+
+
+
+  <div id = "header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "mainfont" href="/conall/all">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+        {% if request.session.email != NULL %}
+        <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+        {% else %}
+        <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+        <li id = "main2"><p class="lr">/</p></li>
+        <li id = "main2"><a class = "logreg" href="/join">회원가입</a></li>
+        {% endif %}
+      </ul>
+    </div>
+   </div>
+
+
+
+
+    <div id = "main_wrap">
+        <div class= "info_h">
+          <h2 class="infofont">INFORMATION</h2>
+        </div>
+
+        <div class ="infobox">
+          <p class = "infofont2">MY UNIVERSE PROJECT. </p>
+        </div>
+
+    </div>
+
+
+    <!-- <div style="position:absolute;">
+      <div style="position:relative;"><img src="images/mainscreen/main_background.png" style="max-width:100%; height:auto; vertical-align: middle;backgound_size: contain;" /></div>
+    </div>
+
+    <div style="position:absolute;">
+      <div style="position:relative;"><h2 class="infofont2">INFORMATION</h2></div>
+    </div>
+
+    <div style="position:absolute;">
+      <div class = "infobox">
+
+        <p class = "infofont">MY UNIVERSE PROJECT. </p>
+
+
+      </div>
+    </div> -->
+
+
+
+
+  </body>
+
+</html>

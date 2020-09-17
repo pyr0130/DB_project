@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+
+  <!-------------------------------------------------- 공통 메뉴 바 --------------------------------------------- -->
+  <div id = "header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "50" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "mainfont" href="/conall/all">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+
+        {% if request.session.email != NULL %}
+        <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+        {% else %}
+        <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+        <li id = "main2"><p class="lr">/</p></li>
+        <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+
+  <!--*********** 공통 메뉴 바************************-->
+
+  <hr class = "c_line" size="1" noshade align="center" width="1519px;" color="#beaebf" />
+
+
+    <div class="ticketbox">
+      <div class="ticket_left">
+        <div class="left_poster">
+          <img src="/media/{{posu.poster}}" style="width:190px; height:230px; margin-top:35px;"/>
+        </div>
+        <div class="left_artist">
+          <p class="left_bold">출연</p>
+          {% for art in artist %}
+            <p class="left_light">{{ art.artist.name }}&nbsp;</p>
+          {% endfor %}
+        </div>
+        <div class="left_hall">
+          <p class="left_bold">장소</p>
+          <p class="left_light">{{posu.hall.name}}</p>
+        </div>
+      </div>
+
+      <div class="ticket_right">
+        <div class="right_name">
+          <p class="rightname">{{posu.name}}</p>
+        </div>
+
+      <form action="" method = "post">
+        <div class="right_left">
+          <div class="right_choice">
+            <p class="choice_menu" style="margin-left: 23px;">일자선택</p>
+          </div>
+          <div class="right_date">
+            <br/>
+            <div class="rdate_con">
+              {% for inp in sche %}
+              <input id="{{inp.date}} {{inp.time}}" name = 'booked' class="radio-inline__input1" type="radio" value='{{inp.date}} {{inp.time}}' onkeypress="JavaScript:press(this.form)"/>
+                 <label class="radio-inline__label1" for="{{inp.date}} {{inp.time}}">{{inp.date}} {{inp.time}}</label>
+              {% endfor %}
+
+              <!-- <input id="i2" class="radio-inline__input1" type="radio" name="state" value='예정' onkeypress="JavaScript:press(this.form)"/>
+                 <label class="radio-inline__label1" for="i2">6월 8일(토) 오후 7시</label>
+              <input id="i3" class="radio-inline__input1" type="radio" name="state" value='진행' onkeypress="JavaScript:press(this.form)"/>
+                 <label class="radio-inline__label1" for="i3">6월 9일(일) 오후 5시</label> -->
+            </div>
+
+            <div class="right_fuel">
+              <div class="fuel_menu">
+                <p class="fuel_need">필요연료</p>
+                <p class="fuel_remain">남은연료</p>
+                <br/>
+                <a href="/fuel" class="conm_font2">연료 충전</a>
+              </div>
+              <div class="fuel_info">
+                <!-- <p class="fm_need">99</p><p class="fm_info"> 연료</p>
+                <p class="fm_remain">99</p><p class="fm_info"> 연료</p> -->
+
+                <p class="fm_need" id = "need">{{ticket}} 연료</p>
+                <p class="fm_remain">{{coin}} 연료</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_right">
+          <p class="choice_menu" style="margin-left: 20px;">좌석선택</p>
+          <div class="roadmap">
+
+      			<select class="section" id = "section" name = "section" onChange="javascript:fn_changeSelected(this);javascript:price(this);">
+      				<option value = '' selected>구역</option>
+              {% for sec in section %}
+                <option value = "{{sec}}">{{sec}}</option>
+              {% endfor %}
+
+      			</select>
+      			<select class="seatno" id = "seat" name = "seatno" onChange="javascript:fn_changeSelected2(this);">
+      				<option value = '' selected>좌석번호</option>
+              {% for sea in seat %}
+                <option value = "{{sea}}">{{sea}}</option>
+              {% endfor %}
+      			</select>
+          </div>
+
+
+          <div class="my_seat">
+            <p class="myseat"  id = "mysect"></p>
+            <p class="myseat2" id = "mysect2"></p>
+          </div>
+          <div class="book_poss">
+            <div class="booking_btn">
+            <!-- <button id="b_btn" onclick="fuel_poss()"></button> -->
+            <!-- <a href="#"><img name="b_btn" src="images/ticketing/button1.jpg" onclick="ChangeImage2()" style="width: 210px; height: 55px;"/></a> -->
+
+
+              {%csrf_token%}
+              <button class = "hvr-fade2-ticket" type="submit">예매하기</button>
+              <!-- <input  type = "image" src="/static/images/ticketing/button2.jpg" style="width: 210px; height: 55px;"/> -->
+            </form>
+
+
+
+                          <!-- {%csrf_token%}
+                          <input  type = "image" name="price" value = '{{ticket}}' src="/static/images/ticketing/button2.jpg" style="width: 210px; height: 55px;"/>
+                        </form> -->
+
+
+          <!-- <form action="" method = "post">
+            {% csrf_token %}
+            <img name="b_btn" src="/static/images/ticketing/button2.jpg" onclick="ChangeImage2('{{ticket.price}}','{{coin}}')" style="width: 210px; height: 55px;"/>
+          </form> -->
+
+            <!-- <a href="#"><img name="b_btn" src="/static/images/ticketing/button1.jpg" onclick="ChangeImage2('{{ticket.price}}','{{coin}}')" style="width: 210px; height: 55px;"/></a> -->
+          </div>
+          </div>
+        </div>
+
+
+      </div>
+  </div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+
+
+  <!--**************************************** 공통 메뉴 바 ************************************ -->
+  <div id = "concert_header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "sel_mainfont" href="/conall/all">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+        {% if request.session.email != NULL %}
+        <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+        {% else %}
+        <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+        <li id = "main2"><p class="lr">/</p></li>
+        <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+        {% endif %}
+      </ul>
+    </div>
+   </div>
+
+
+  <!--***********************************************공통 메뉴 바 ***************************************** -->
+
+  <!--***********************************************메인 메뉴 바 ***************************************** -->
+
+    <hr class = "c_line" size="1" noshade align="center" width="1519px;" color="#beaebf" />
+
+
+    <div id="concert_menu">
+        <ul class = "con_menuul">
+            <li class="menuli_con"><a class="conm_font" href="/conall/all">전체 콘서트</a></li>
+            <li class="menuli_con"><a class="conm_font" href="/condate/year">일정</a></li>
+            <li class="menuli_con"><a class="conm_font" href="/conart">가수</a></li>
+            <li class="menuli_con"><a class="sel_conm_font" href="/conrank">티켓랭킹</a></li>
+            <li class="temp_con"><img src="/static/images/mainconcert/cashstar.png" /></li>
+            <li class="menuli_con" style = "padding-right: 0px;"><a class="conm_font2" href="/fuel">연료충전</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class ="banner_sear">
+          <form action="/search" method="post">
+            {% csrf_token %}
+            <input class = 'sear' name="search_key" type='text' placeholder="Search"/>
+            <input class = 'sear_b2' type="submit" value=""/>
+          </form>
+
+        </div>
+
+        <div class = "con_details">
+            <a><img src="/static/images/mainconcert/detailsearch.png" name = "img2" onclick= "imgToggle()"/></a>
+        </div>
+    </div>
+
+    <div class = "hide">
+      <div class = "de_search">
+
+        <form action="#" name = "detail_search">
+          <div class="ds">
+            <p class= "ds_text">콘서트명</p>
+            <input class = "dinput_info" type="text" placeholder="콘서트명 입력" onkeypress="JavaScript:press(this.form)">
+          </div>
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;가수명</p>
+            <input class = "dinput_info" type="text" placeholder="가수 입력" onkeypress="JavaScript:press(this.form)" >
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일정</p>
+            <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+            <p class = "date_conn"> ~ </p>
+            <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장소</p>
+            <input class = "dinput_info" type="text" placeholder="장소입력" onkeypress="JavaScript:press(this.form)">
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              <button class = "hvr-fade-de" type="submit">검색</button>
+          </div>
+
+          </form>
+
+          <!-- <div class ="ems"> -->
+          </div>
+
+
+      </div>
+
+  <!--***********************************************메인 메뉴 바 ***************************************** -->
+
+    <div class= "concert_sort">
+      <p id = "allc_sort">[ 최다관심공연 ]</p>
+
+
+        <a name = "sche" href="#" class="action-button animate green"onclick=ChangeTextSort8()>최다관심가수</a>
+
+        <a name = "all" href="#" class="action-button animate green"onclick=ChangeTextSort9()>최다관심공연</a>
+
+    </div>
+
+<!--**************************** 콘서트 반복되는 구간 ************************** -->
+    <div class = "consert_main">
+
+
+      <div class = "cmain">
+
+        <ul class = "consert_poster">
+            <li class="cpos">
+              <div class = "pos1">
+                <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190097.jpg"></a>
+              </div>
+              <div class = "pos2">
+                <p class = "postex">포르테 디 콰트로 콘서트</p>
+              </div>
+
+              <div class = "pos3">
+                <p class = "postex2">2019.03.16 ~ 2019.03.16</p>
+              </div>
+              <div class = "pos3">
+                <p class = "postex2">롯데콘서트홀</p>
+              </div>
+            </li>
+
+            <li class="cpos">
+
+              <div class = "pos1">
+                <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190098.jpg"></a>
+              </div>
+
+              <div class = "pos2">
+                <p class = "postex">김윤아 콘서트</p>
+              </div>
+
+              <div class = "pos3">
+                <p class = "postex2">2019.05.11 ~ 2019.06.02</p>
+              </div>
+              <div class = "pos3">
+                <p class = "postex2">신한카드 FAN(판)스퀘어_라이브홀</p>
+              </div>
+
+            </li>
+            <li class="cpos">
+              <div class = "pos1">
+                <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190099.jpg"></a>
+              </div>
+
+              <div class = "pos2">
+                <p class = "postex">여자친구 콘서트</p>
+              </div>
+
+              <div class = "pos3">
+                <p class = "postex2">2019.05.18 ~ 2019.05.19</p>
+              </div>
+              <div class = "pos3">
+                <p class = "postex2">올림픽공원 SK올림픽핸드볼경기장 (구 펜싱경기장)</p>
+              </div>
+
+            </li>
+            <li class="cpos">
+              <div class = "pos1">
+              <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190100.jpg"></a>
+              </div>
+
+              <div class = "pos2">
+                <p class = "postex">박나래의 농염주의보</p>
+              </div>
+
+              <div class = "pos3">
+                <p class = "postex2">2019.05.17 ~ 2019.05.18</p>
+              </div>
+              <div class = "pos3">
+                <p class = "postex2">블루스퀘어 아이마켓홀 (구 삼성카드홀)</p>
+              </div>
+
+            </li>
+        </ul>
+
+      </div>
+
+    </div>
+<!-- ****************************** 콘서트 반복 종료 구간 ****************************** -->
+
+
+
+<div class = "consert_main">
+
+  <div class = "cmain">
+
+    <ul class = "consert_poster">
+        <li class="cpos">
+          <div class = "pos1">
+            <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190097.jpg"></a>
+          </div>
+          <div class = "pos2">
+            <p class = "postex">포르테 디 콰트로 콘서트</p>
+          </div>
+
+          <div class = "pos3">
+            <p class = "postex2">2019.03.16 ~ 2019.03.16</p>
+          </div>
+          <div class = "pos3">
+            <p class = "postex2">롯데콘서트홀</p>
+          </div>
+        </li>
+        <li class="cpos">
+
+          <div class = "pos1">
+            <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190098.jpg"></a>
+          </div>
+
+          <div class = "pos2">
+            <p class = "postex">김윤아 콘서트</p>
+          </div>
+
+          <div class = "pos3">
+            <p class = "postex2">2019.05.11 ~ 2019.06.02</p>
+          </div>
+          <div class = "pos3">
+            <p class = "postex2">신한카드 FAN(판)스퀘어_라이브홀</p>
+          </div>
+
+        </li>
+        <li class="cpos">
+          <div class = "pos1">
+            <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190099.jpg"></a>
+          </div>
+
+          <div class = "pos2">
+            <p class = "postex">여자친구 콘서트</p>
+          </div>
+
+          <div class = "pos3">
+            <p class = "postex2">2019.05.18 ~ 2019.05.19</p>
+          </div>
+          <div class = "pos3">
+            <p class = "postex2">올림픽공원 SK올림픽핸드볼경기장 (구 펜싱경기장)</p>
+          </div>
+
+        </li>
+        <li class="cpos">
+          <div class = "pos1">
+          <a href="/posdetail"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/static/images/mainconcert/20190100.jpg"></a>
+          </div>
+
+          <div class = "pos2">
+            <p class = "postex">박나래의 농염주의보</p>
+          </div>
+
+          <div class = "pos3">
+            <p class = "postex2">2019.05.17 ~ 2019.05.18</p>
+          </div>
+          <div class = "pos3">
+            <p class = "postex2">블루스퀘어 아이마켓홀 (구 삼성카드홀)</p>
+          </div>
+
+        </li>
+    </ul>
+
+  </div>
+
+</div>
+
+<a href="#" class="top"></a>
+
+</body>
+</html>

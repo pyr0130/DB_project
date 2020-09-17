@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+  <div id = "register">
+
+    <div class = "register_header_wrap">
+      <div class = "logo_login">
+        <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+      </div>
+      <div class = "login_menu">
+        <a class = "go_register" href="/login">로그인</a>
+      </div>
+    </div>
+
+
+    <div class = "register_body">
+
+      <div class = "register_par">
+        <center><img class = "lpar" src="/static/images/register/welcomeU.png" width = "532px" height = "40px"/></center>
+      </div>
+
+
+
+      <div class ="register_main_part">
+
+        <div class ="register_box2">
+          <form action="" name = "register" method="post">
+            {% csrf_token %}
+            <input class = "input_info" name = "name" type="text" placeholder="name" onkeypress="JavaScript:press(this.form)" required>
+            {% csrf_token %}
+            <input class = "input_info2" name = "birth" placeholder="yyyy-mm-dd" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)" required>
+
+            <div class='switch'><div class='quality'>
+                {% csrf_token %}
+                <input checked id='q1' name='sex' type='radio' value='남성' onkeypress="JavaScript:press(this.form)" required>
+                <label for='q1'>male</label>
+              </div><div class='quality'>
+                <input id='q2' name='sex' type='radio' value='여성' onkeypress="JavaScript:press(this.form)" required >
+                <label for='q2'>female</label>
+              </div>
+            </div>
+
+            {% csrf_token %}
+            <input class = "input_info2" placeholder="010-1234-5678" type="text" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" onkeypress="JavaScript:press(this.form)" required>
+            {% csrf_token %}
+            <input class = "input_info2" name = "email" type="email" placeholder="email" onkeypress="JavaScript:press(this.form)" required>
+            {% csrf_token %}
+            <input class = "input_info2" name = "password1" type= "password" placeholder="password" onkeypress="JavaScript:press(this.form)" required>
+            {% csrf_token %}
+            <input class = "input_info2" name = "password2" type= "password" placeholder="password (again)" onkeypress="JavaScript:press(this.form)" required>
+
+
+            <div class = "ems">
+            {% if error %}
+                {{ error }}
+            {% endif %}
+            </div>
+            <button class = "hvr-fade2-register" type="submit">SIGN UP</button>
+
+          </form>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+</body>
+</html>

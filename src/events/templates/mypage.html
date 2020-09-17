@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+  <div id = "concert_header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "mainfont" href="/conall/all">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "sel_mainfont" href="/mypage">MY PAGE</a></li>
+
+
+        {% if request.session.email != NULL %}
+        <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+        {% else %}
+        <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+        <li id = "main2"><p class="lr">/</p></li>
+        <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+        {% endif %}
+      </ul>
+    </div>
+   </div>
+
+    <div id = "main_wrap_mypage">
+        <div class= "info_h">
+          <h2 class="infofont">MY PAGE</h2>
+        </div>
+
+        <p class="my_font">#Profile</p>
+        <p class="my_font1">#Artist/Concert</p>
+        <p class="my_font2">#Mobile Ticket</p>
+        <div class ="my_profile">
+          <img src="/static/images/mypage/pro.png" width="200px" height="200px" margin-top="5px"/>
+          <div class="my_profile2">
+            <p class="email">이름: {{username}}</p>
+            <p class="email">이메일: {{email}}</p>
+            <p class="fuel"><img src="/static/images/mainconcert/cashstar.png"/>remaining fuel: {{coin}} fuel</p>
+          </div>
+        </div>
+        <div class="con_box">
+          {% if temp2 %}
+          <p class="confont">#favorite artist</p>
+
+          {% for i in temp2 %}
+          <div class="fav_art">
+            <!-- <img src="/static/images/mainscreen/pos2.png" width="130px" height="130px"/> -->
+            <p class="confont1">{{i.name}}</p>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+
+
+          {% if temp %}
+          <p class="confont">#favorite concert</p>
+          {% for con in temp %}
+              <p class="confont1"> {{con.name}}</p>
+            {% endfor %}
+          {% endif %}
+
+        </div>
+        <div class="con_box">
+          <p class="confont2">TICKET</p>
+          {% for i in book %}
+
+          <!-- <img src="/static/images/concert_page/pos_small.jpg" width="220px" height="280px"/> -->
+          <p>
+              <a class="confont3" href = '/posdetail/{{i.concert.code}}' >{{i.concert.name}} <br> {{i.booked_at}} - {{i.section}} {{i.number}}</a>
+          </p>
+          {% endfor %}
+        </div>
+    </div>
+
+  </body>
+
+</html>

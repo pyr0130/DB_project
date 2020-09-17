@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+
+
+  <!--**************************************** 공통 메뉴 바 ************************************ -->
+  <div id = "concert_header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "sel_mainfont" href="/conall/all">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+        {% if request.session.email != NULL %}
+        <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+        {% else %}
+        <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+        <li id = "main2"><p class="lr">/</p></li>
+        <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+        {% endif %}
+      </ul>
+    </div>
+   </div>
+
+
+  <!--***********************************************공통 메뉴 바 ***************************************** -->
+
+  <!--***********************************************메인 메뉴 바 ***************************************** -->
+
+    <hr class = "c_line" size="1" noshade align="center" width="1519px;" color="#beaebf" />
+
+
+
+    <div id="concert_menu">
+        <ul class = "con_menuul">
+          <li class="menuli_con"><a class="sel_conm_font" href="/conall/all">전체 콘서트</a></li>
+          <li class="menuli_con"><a class="conm_font" href="/condate/year">일정</a></li>
+          <li class="menuli_con"><a class="conm_font" href="/conart">가수</a></li>
+          <li class="menuli_con"><a class="conm_font" href="/conrank">티켓랭킹</a></li>
+            <li class="temp_con"><img src="/static/images/mainconcert/cashstar.png" /></li>
+            <li class="menuli_con" style = "padding-right: 0px;"><a class="conm_font2" href="/fuel">연료충전</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class ="banner_sear">
+          <form action="/search" method="post">
+            {% csrf_token %}
+            <input class = 'sear' name="search_key" type='text' placeholder="Search"/>
+            <input class = 'sear_b2' type="submit" value=""/>
+          </form>
+
+        </div>
+
+        <div class = "con_details">
+            <a><img src="/static/images/mainconcert/detailsearch.png" name = "img2" onclick= "imgToggle()"/></a>
+        </div>
+    </div>
+
+    <div class = "hide">
+      <div class = "de_search">
+
+        <form action="/detailedsearch" method = "post" name = "detailedsearch">
+          {% csrf_token %}
+          <div class="ds">
+            <p class= "ds_text">콘서트명</p>
+            <input class = "dinput_info" type="text" name = "concertname" placeholder="콘서트명 입력" onkeypress="JavaScript:press(this.form)">
+          </div>
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;가수명</p>
+            <input class = "dinput_info" type="text" name = "artistname" placeholder="가수 입력" onkeypress="JavaScript:press(this.form)" >
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일정</p>
+            <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" name ="startdate" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+            <p class = "date_conn"> ~ </p>
+            <input class = "dinput_info2" placeholder="yyyy-mm-dd" type="text" name = "enddate" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" onkeypress="JavaScript:press(this.form)">
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장소</p>
+            <input class = "dinput_info" type="text" placeholder="장소입력" name = "location" onkeypress="JavaScript:press(this.form)">
+          </div>
+
+          <div class="ds">
+            <p class= "ds_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              <button class = "hvr-fade-de" type="submit">검색</button>
+          </div>
+
+          </form>
+
+          <!-- <div class ="ems"> -->
+          </div>
+
+
+      </div>
+
+  <!--***********************************************메인 메뉴 바 ***************************************** -->
+
+    <div class= "concert_sort">
+
+      {% if code == 'exit' %}
+        <p id = "allc_sort">[ 종료 ]</p>
+      {% endif %}
+      {% if code == 'now'%}
+
+        <p id = "allc_sort">[ 진행 ]</p>
+      {% endif %}
+      {% if code == 'plan'%}
+
+        <p id = "allc_sort">[ 예정 ]</p>
+      {% endif %}
+      {% if code == 'all'%}
+
+        <p id = "allc_sort">[ 전체 ]</p>
+      {% endif %}
+
+        <a name ="down" href="#" class="action-button-sort sort_down"></a>
+
+        <a name = "up" href="#" class="action-button-sort sort_up"></a>
+        <a name  = "exit" href="/conall/exit" class="action-button animate green">종료</a>
+
+
+        <a name = "sche" href="/conall/plan" class="action-button animate green" >예정</a>
+
+        <a name = "ing" href="/conall/now" class="action-button animate green">진행</a>
+
+        <a name = "all" href="/conall/all" class="action-button animate green" >전체</a>
+
+    </div>
+
+<!--**************************** 콘서트 반복되는 구간 ************************** -->
+    <!-- <div class = "consert_main"> -->
+{% if group %}
+      <div class = "cmain">
+
+        <ul class = "consert_poster">
+          {% for item in group %}
+            <li class="cpos">
+              <div class = "pos1">
+                <a href="/posdetail/{{item.concert.code}}"><img class = "img_pos" onmouseover="this.style.opacity='0.3'" onmouseout="this.style.opacity='1'" src="/media/{{item.concert.poster}}"></a>
+
+              </div>
+              <div class = "pos2">
+                <p class = "postex">{{item.concert.name}}</p>
+              </div>
+
+              <div class = "pos3">
+                <p class = "postex2">{{item.date}}</p>
+              </div>
+              <div class = "pos3">
+
+                  <p class = "postex2">{{item.concert.hall.name}}</p>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+  {% endif %}
+      <!-- </div> -->
+
+
+<a href="#" class="top"></a>
+
+</body>
+</html>

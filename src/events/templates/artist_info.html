@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+  <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+  <title>{{a.name}}</title>
+  </head>
+
+
+    <body class="artist_popup">
+      <div class="artist_infos">
+
+        <div class="art_left">
+          <div class="artist_picture">
+            <img src="/media/{{a.image}}" style="width:120px; height:150px;">
+          </div>
+
+          <div class="artist_favorite">
+            <form method="POST" action = "">
+              {% csrf_token %}
+            <input type="submit" class="art_fav" value="관심 가수 등록"/>
+          </form>
+          </div>
+        </div>
+
+        <div class="artist_menu">
+            <ul class="artists">
+              <li class="art_info">가수명: {{a.name}}</li>
+              {% if a.debut %}
+                <li class="art_info">데뷔년도: {{a.debut}}년 </li>
+              {% endif %}
+
+              {% if a.birth %}
+                <li class="art_info">생년월일: {{a.birth}}</li>
+              {% endif %}
+
+              {% if m %}
+              <li class="art_info"><strong>멤버:
+
+              {% for mm in m %}
+                {{mm.member}}&nbsp;
+              {% endfor %}
+              </li>
+              {% endif %}
+
+              {% if con %}
+                  <li class="art_info">주요콘서트:
+                    {% for c in con %}
+                      </br>{{c.concert.name}}
+                    {% endfor %}
+                  </li>
+              {% endif %}
+            </ul>
+        </div>
+
+        <input type="button" value="닫 기" onclick="self.close();" class="popup_close"/>
+      </div>
+    </body>
+</html>

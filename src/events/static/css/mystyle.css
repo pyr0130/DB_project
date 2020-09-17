@@ -1,0 +1,2157 @@
+@font-face{
+  font-family:'NanumSquareB';
+  src: url('../font/NanumSquareB.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'NanumSquareR';
+  src: url('../font/NanumSquareR.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'NanumSquareEB';
+  src: url('../font/NanumSquareEB.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'SNU';
+  src: url('../font/DXSnUB-KSCpc-EUC-H.ttf') format('truetype');
+}
+
+
+@font-face{
+  font-family: 'PNM';
+  src: url('../font/DXPnM-KSCpc-EUC-H.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'kopubBatangB';
+  src: url('../font/KoPubWorld Batang Bold.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'kopubDotumB';
+  src: url('../font/KoPubWorld Dotum Bold.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'kopubDotumM';
+  src: url('../font/KoPubWorld Dotum Medium.ttf') format('truetype');
+}
+
+
+@font-face{
+  font-family:'kopubDotumL';
+  src: url('../font/KoPubWorld Dotum Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'MobrRExtraB';
+    src: url('../font/DXMobrRExtraBold-KSCpc-EUC-H.ttf') format('truetype');
+}
+
+
+#header_wrap{
+  /* background-color: black; */
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 1536px;
+  height:70px;
+  font-size: 0;
+  line-height: 0;
+}
+
+div.logo{
+  display:block;
+  float:left;
+  overflow: hidden;
+  padding-top: 12px;
+  margin-left: 50px;
+  width: 200px;
+  height: 70px;
+
+}
+
+div.menu{
+  float:left;
+  display:block;
+  overflow: hidden;
+  margin-left: 100px;
+  padding-top: 15px;
+  display: inline;
+  width: auto;
+  height: 70px;
+}
+
+a.mainfont{
+  margin-right: 60px;
+  font-size: 28px;
+  color: #500867;
+  font-family:'NanumSquareB';
+}
+
+a.mainfont:hover, a.mainfont:active{
+  color: #ffaea0;
+  text-decoration: none;
+}
+
+a.logreg{
+    /* display: block; */
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #500867;
+    font-family:'NanumSquareB';
+}
+
+
+a.logreg:hover, a.logreg:active{
+  color: #ffaea0;
+  text-decoration: none;
+}
+
+
+p.lr{
+      font-size: 20px;
+      color: #500867;
+      font-family:'NanumSquareB';
+}
+
+ul.menuul{
+  padding-top: 5px;
+  display:inline;
+  margin-block-start: 1em;
+  margin-block-end:1em;
+  margin-inline-start: 0px;
+  margin-inline-end:0px;
+  padding-inline-start: 0px;
+  margin: 0 auto;
+}
+
+
+#main1{
+  display:inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: enter;
+  padding-right: 50px;
+}
+
+#main2{
+  display:inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: enter;
+}
+
+#main_wrap{
+  position: absolute;
+  background-image: url("../images/mainscreen/main_background.png");
+  /* width:100%;
+  height:auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  width:1536px;
+  height:684px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:0;
+  padding:0;
+}
+
+
+#main_wrap_mypage{
+  position: absolute;
+  background-image: url("../images/mainscreen/main_background.png");
+  /* width:100%;
+  height:auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  width:1519px;
+  height:auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:0;
+  padding:0;
+}
+
+
+div.boot_pos{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 400px;
+  width:1536px;
+}
+
+
+img.slide{
+  width :301.5px;
+  height:295.5px;
+}
+
+p.font{
+  font-family: 'SNU';
+  color:#ffffff;
+  font-size:25px;
+
+  width: 100%;
+  overflow: hidden;
+  line-height:100%
+}
+
+
+div.main_search{
+  margin-left: 500px;
+  width:1030px;
+  height:184px;
+
+   /* position:absolute;
+   left:500px;
+   top:575px; */
+}
+
+input.sear{
+  outline: none;
+  float:left;
+  font-family: 'SNU';
+  color:#9e809c;
+  padding-left:10px;
+  font-size:30px;
+
+  /* padding-right:120px; */
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:20px;
+  padding-right:63px;
+  width:550px;
+  background-color: #ffffff;
+  opacity:0.69;
+  border:none;
+  border-radius: 15px;
+}
+
+input.sear_b{
+  outline:none;
+  position: absolute;
+  right:500px;
+  float:left;
+  margin-top:5.5px;
+  width:42px;
+  height:41px;
+  border:none;
+  background: url("../images/mainscreen/searchstar.png") no-repeat;
+}
+input.sear_b2{
+  outline:none;
+  position: absolute;
+  right:30px;
+  float:left;
+  margin-top:5.5px;
+  width:42px;
+  height:41px;
+  border:none;
+  background: url("../images/mainscreen/searchstar.png") no-repeat;
+}
+
+
+/* **********************************************  */
+div.info_h{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width:1536px;
+  height: 50px;
+}
+
+div.infobox{
+  margin-left: 150px;
+  color:#9e809c;
+  width:1200px;
+  height:570px;
+  background-color: #ffffff;
+  opacity:0.8;
+  border:none;
+  border-radius: 15px;
+}
+
+h2.infofont{
+  margin-bottom: 0;
+  text-align:center;
+  font-family:'kopubBatangB';
+  font-size:40px;
+  color:#ffffff;
+}
+
+p.infofont2{
+  padding-left:120px;
+  padding-top:35px;
+  font-family:'kopubBatangB';
+  font-size:25px;
+  color:#140719;
+}
+
+
+
+/************** login************/
+
+#login{
+  position: absolute;
+  background-image: url("../images/login/login_back.jpg");
+  /* width:100%;
+  height:auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  width:1536px;
+  height:754px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:0;
+  padding:0;
+}
+
+div.login_header_wrap{
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 1536px;
+  height:100px;
+  font-size: 0;
+  line-height: 0;
+}
+
+div.logo_login{
+  display:block;
+  float:left;
+  overflow: hidden;
+  padding-top: 40px;
+  margin-left: 140px;
+  width: 200px;
+  height: 100px;
+}
+
+div.login_menu{
+  float:left;
+  display:block;
+  overflow: hidden;
+  margin-left: 10px;
+  padding-top: 70px;
+  text-align: center;
+  display: inline;
+  width: 200;
+  height: 100px;
+}
+
+div.login_body{
+    position: absolute;
+    width:1536px;
+    height:654px;
+}
+
+div.login_par{
+  width:1536px;
+  height: 115px;
+}
+
+/* p.lpar{
+  margin-bottom: 0;
+  margin-block-start:0;
+  margin-block-end:0;
+  padding-top:40px;
+  font-family: 'SNU';
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+} */
+
+img.lpar{
+  margin-top:44px;
+}
+
+div.login_main_part{
+  width:1536px;
+  height:320px;
+}
+
+div.login_box{
+  position: absolute;
+  top: 115px;
+  left: 513px;
+  color:#9e809c;
+  width:513px;
+  height:320px;
+  background-color: #ffffff;
+  opacity:0.8;
+  border:none;
+  border-radius: 5px;
+}
+
+div.login_box2{
+  background-image: url("../images/login/logbox.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:1536px;
+  height:320px;
+}
+
+div.lbox_pos{
+  width: 513px;
+  height: 100px;
+}
+
+.input_info:hover{
+  	background: #fff4f6;
+  	color: #000000;
+  }
+
+.input_info2:hover{
+  	background: #fff4f6;
+  	color: #000000;
+  }
+
+.input_info:focus{
+  outline: none;
+}
+.input_info2:focus{
+    outline: none;
+}
+
+input.input_info{
+
+
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:0.75em;
+  width:280px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+
+
+  margin-top: 60px;
+  margin-left: 628px;
+
+  font-family:'NanumSquareB';
+  font-size:20px;
+  color:#000000;
+
+
+
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+
+}
+
+input.input_info2{
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:0.75em;
+  width:280px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+
+  margin-top: 15px;
+  margin-left: 628px;
+
+  font-family:'kopubDotumB';
+  font-size:20px;
+  color:#000000;
+
+
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+
+}
+
+button.log_sub{
+    font-family: 'NanumSquareB';
+    font-size: 25px;
+    margin-top: 40px;
+    margin-left: 608px;
+    width:320px;
+    height: 60px;
+    border:none;
+
+}
+
+/* chrome */
+input::-webkit-input-placeholder { color: #9e8ba0; font-family:'SNU';}
+
+/* Firefox 4-18 */
+input:-moz-placeholder { color: #9e8ba0;  font-family:'SNU';}
+
+/* Firefox 19+ */
+input::-moz-placeholder { color: #9e8ba0; font-family:'SNU'; }
+
+/* IE10+ */
+input:-ms-input-placeholder { color: #9e8ba0;  font-family:'SNU';}
+
+
+div.login_pass{
+  margin-top: 5px;
+  width:1536px;
+  height: 30px;
+}
+
+a.pass_font{
+  margin-left: 513px;
+  font-family: 'SNU';
+  font-size: 18px;
+  color: #f0dbf2;
+}
+
+a.pass_font:hover, a.pass_font:active{
+  color: #500867;
+  text-decoration: none;
+}
+
+
+a.go_register{
+  float:left;
+  font-size: 23px;
+  color: #ffffff;
+  font-family:'NanumSquareB';
+}
+
+a.go_register:hover, a.go_register:active{
+  color: #ffaea0;
+  text-decoration: none;
+}
+
+/* Fade */
+button.hvr-fade2 {
+
+  font-family: 'NanumSquareB';
+  font-size: 23px;
+  margin-top: 40px;
+  margin-left: 608px;
+  width:320px;
+  height: 60px;
+  border:none;
+
+  background-color: #beaebf;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+button.hvr-fade2:hover, .hvr-fade2:focus, .hvr-fade2:active {
+  /* background-image: url('../images/login/log_button.png'); */
+  background-color: #d37f95;
+  color: white;
+}
+
+
+button.hvr-fade2-register {
+
+  font-family: 'NanumSquareB';
+  font-size: 23px;
+  margin-top: 20px;
+  margin-left: 608px;
+  width:320px;
+  height: 60px;
+  border:none;
+
+  background-color: #beaebf;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+button.hvr-fade2-register:hover, .hvr-fade2-register:focus, .hvr-fade2-register:active {
+  /* background-image: url('../images/login/log_button.png'); */
+  background-color: #d37f95;
+  color: white;
+}
+
+
+
+
+/********************* register ************************/
+
+
+#register{
+
+  background-image: url("../images/register/register_back.jpg");
+
+  background-size: cover;
+  width:1519px;
+  height:1142px;
+  background-repeat: no-repeat;
+  border:0;
+  padding:0;
+  margin:0;
+}
+
+div.register_header_wrap{
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 1519px;
+  height:100px;
+  font-size: 0;
+  line-height: 0;
+}
+
+div.register_body{
+  position: absolute;
+  width:1519px;
+  height:1042px;
+}
+
+
+div.register_par{
+  width:1519px;
+  height: 115px;
+}
+
+
+div.register_main_part{
+  width:1519px;
+  height:700px;
+}
+
+div.register_box2{
+  background-image: url("../images/register/registerbox.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:1519px;
+  height:700px;
+}
+
+
+/* ************* */
+
+
+.switch {
+  width:280px;
+  height: 50px;
+
+  margin-top: 25px;
+  margin-left: 628px;
+
+
+  position: relative;
+
+  border: 3px solid #ffffff;
+  color: #9e8ba0;
+  font-family:'kopubDotumB';
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.quality {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  line-height: 40px;
+}
+.quality:first-child label {
+  border-radius: 5px 0 0 5px;
+}
+.quality:last-child label {
+  border-radius: 0 5px 5px 0;
+}
+.quality label {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  font-family:'SNU';
+  font-size: 20px;
+
+  text-align: center;
+  transition: transform 0.4s, color 0.4s, background-color 0.4s;
+}
+.quality input[type="radio"] {
+
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:0.75em;
+  width:280px;
+
+  margin-top: 25px;
+  margin-left: 628px;
+
+
+  appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.quality input[type="radio"]:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.quality input[type="radio"]:checked ~ label {
+
+  font-family:'kopubDotumB';
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #000;
+}
+.quality input[type="radio"]:active ~ label {
+  transform: scale(1.05);
+}
+/* ******* */
+
+div.ems{
+  text-align: center;
+  font-family: 'kopubDotumB';
+  font-size: 15px;
+  color: #ff6666;
+  margin-top: 20px;
+  height: 30px;
+}
+
+
+/* ******* concert ****** */
+
+a.top {
+  background-image: url('../images/sort/TOP.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:55px;
+  height: 30px;
+  /*
+  font-family: 'kopubDotumB';
+  font-size: 25px;
+  color: #ffaea0; */
+  position: fixed;
+  margin-left: 720px;
+  bottom: 20px;
+  display: none;
+}
+
+a.top:hover {
+  text-decoration: none;
+}
+
+#concert_header_wrap{
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 1519px;
+  height:70px;
+  font-size: 0;
+  line-height: 0;
+}
+
+a.sel_mainfont{
+  margin-right: 60px;
+  font-size: 28px;
+  color: #ffaea0;
+  font-family:'NanumSquareB';
+}
+
+a.sel_mainfont:hover, a.sel_mainfont:active{
+  color: #ffaea0;
+  text-decoration: none;
+}
+
+
+hr.c_line{
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+#concert_menu{
+  float:left;
+  display:block;
+  overflow: hidden;
+  margin-left: 340px;
+  display: inline;
+  width: 1179px;
+  height:50px;
+}
+
+ul.con_menuul {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display:inline;
+  margin-block-start: 1em;
+  margin-block-end:1em;
+  margin-inline-start: 0px;
+  margin-inline-end:0px;
+  padding-inline-start: 0px;
+
+}
+
+.temp_con{
+  display:inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 70px;
+}
+
+.menuli_con{
+  display:inline;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding-right: 150px;
+}
+
+a.sel_conm_font{
+    font-size: 22px;
+    color: #ffaea0;
+    text-decoration: none;
+    font-family: kopubDotumB;
+    /* padding: 0 50px 0 50px; */
+    /* font-weight: bold; */
+}
+
+
+a.conm_font {
+    font-size: 22px;
+    color: #130819;
+    text-decoration: none;
+    font-family: kopubDotumB;
+    /* padding: 0 50px 0 50px; */
+    /* font-weight: bold; */
+}
+
+a.conm_font:hover {
+    font-size: 22px;
+    color: #ffaea0;
+    text-decoration: none;
+    font-family: kopubDotumB;
+    /* padding: 0 50px 0 50px; */
+    /* font-weight: bold; */
+}
+
+a.conm_font2 {
+    font-size: 20px;
+    color: #130819;
+    text-decoration: none;
+    font-family: SNU;
+    /* padding: 0 20px 0 20px; */
+}
+
+
+div.banner{
+  background-image: url('../images/mainconcert/banner.png');
+  width:1519px;
+  height:74px;
+  display:block;
+  overflow: hidden;
+}
+
+div.banner_sear{
+  position:relative;
+  float:left;
+  margin-left: 470px;
+  width:569px;
+  height:64px;
+  margin-top: 10px;
+}
+
+form.searr{
+    display: block;
+}
+
+div.con_details{
+  position:relative;
+  float:left;
+  width:480px;
+  height:62px;
+  margin-top: 12px;
+}
+
+input.c_sear_b{
+  outline:none;
+  position: absolute;
+  right:33px;
+  float:left;
+  margin-top:5.5px;
+  width:42px;
+  height:41px;
+  border:none;
+  background: url("../images/mainscreen/searchstar.png") no-repeat;
+}
+
+div.concert_text{
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right:50px;
+  width:1419px;
+  height:44px;
+  display:block;
+  overflow: hidden;
+}
+
+div.ctag{
+  width:1359px;
+  height:55px;
+  margin-left: 160px;
+  display:block;
+  overflow: hidden;
+}
+
+p.ctag_text {
+  font-family: MobrRExtraB;
+  font-size: 30px;
+  color: #4e2649;
+
+  margin-bottom: 0px;
+}
+div.cmain{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 159.5px;
+  margin-right: 159.5px;
+  width:1200px;
+  /* height:420px; */
+  height: auto;
+  display:block;
+  overflow: hidden;
+}
+
+ul.consert_poster{
+  padding-top: 5px;
+  display:inline;
+  margin-block-start: 1em;
+  margin-block-end:1em;
+  margin-inline-start: 0px;
+  margin-inline-end:0px;
+  padding-inline-start: 0px;
+  margin: 0 auto;
+}
+
+li.cpos{
+  background-image: url('../images/mainconcert/back_poster2.jpg');
+  background-repeat: no-repeat;
+  display:inline;
+  float: left;
+  margin-bottom:50px;
+  background-size: cover;
+  width : 280px;
+  height: 387.6px;
+  margin-right: 20px;
+  /* line-height: 50px; */
+  text-align: center;
+}
+
+div.pos1{
+  width: 280px;
+  height: 290.6px;
+}
+
+div.pos2{
+  display: inline-block;
+
+  width: 240px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+div.pos3{
+  display: block;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 260px;
+  height: 25px;
+}
+
+p.postex{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  font-family: kopubDotumB;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+p.postex2{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 0px;
+  font-family: kopubDotumB;
+  font-size: 16px;
+}
+
+img.img_pos{
+  margin-top: 28px;
+  width: 200px;
+  height: auto;
+  /* max-width:230px;
+  max-height:280px; */
+}
+
+
+.con_details a{
+  cursor:pointer;
+}
+
+div.hide{
+  display:none;
+}
+
+
+div.de_search{
+  background-image: url('../images/mainconcert/toggle.jpg');
+  background-size:cover;
+  width:1519px;
+  height:340px;
+}
+
+div.ds{
+  margin-left: 500px;
+  height:65px;
+}
+
+
+.dinput_info:hover{
+  	background: #fff4f6;
+  	color: #000000;
+  }
+
+.dinput_info2:hover{
+  	background: #fff4f6;
+  	color: #000000;
+  }
+
+.dinput_info:focus{
+  outline: none;
+}
+.dinput_info2:focus{
+    outline: none;
+}
+
+input.dinput_info{
+
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:0.75em;
+
+  width:404px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px;
+
+  margin-top:13px;
+
+  font-family:'NanumSquareB';
+  font-size:20px;
+  color:#000000;
+
+}
+
+input.dinput_info2{
+
+  position: relative;
+  float:left;
+
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:0.15em;
+  width:180px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px;
+
+  margin-top: 13px;
+
+  font-family:'kopubDotumB';
+  font-size:18px;
+  color:#000000;
+
+}
+p.ds_text {
+  float:left;
+  margin-bottom: 0px;
+  margin-top: 18px;
+  margin-right: 25px;
+  width: 100px;
+  font-size: 23px;
+  color: #000000;
+  font-family: NanumSquareEB;
+}
+
+p.date_conn {
+  float:left;
+  margin-bottom: 0px;
+  margin-left: 12px;
+  margin-top:13px;
+  width:20px;
+  margin-right: 12px;
+  font-size: 30px;
+  color: #000000;
+  font-family: kopubDotumB;
+}
+
+
+/* Fade */
+button.hvr-fade-de {
+
+  font-family: 'NanumSquareB';
+  font-size: 18px;
+  margin-top: 15px;
+  margin-left:8px;
+  width:100px;
+  height:48px;
+  border:none;
+  outline:none;
+  background-color: #beaebf;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+button.hvr-fade-de:hover, .hvr-fade-de:focus, .hvr-fade-de:active {
+  /* background-image: url('../images/login/log_button.png'); */
+  background-color: #d37f95;
+  outline:none;
+  color: white;
+}
+
+
+
+.radio-inline__input {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.radio-inline__label {
+    float:left;
+    background-color: #ffffff;
+    font-size: 20px;
+    color: #000000;
+    font-family: kopubDotumB;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 30px;
+    margin-top:15px;
+    border-radius: 15px;
+    transition: all .2s;
+}
+
+.radio-inline__input:checked + .radio-inline__label {
+    background: #B54A4A;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0,0,0,.7);
+}
+
+
+
+/* ------- concert_detail.html css ------- */
+#wrap{
+  width:1050px;
+  height:100%;
+  margin:50px 230px;
+  border: 3px solid #d9d2da;
+  border-radius: 10px;
+}
+
+#wrap_s{
+  width:480px;
+  height:250px;
+  margin:125px 430px;
+  /* border: 1px solid #d9d2da; */
+}
+
+#wrap_c{
+  width:1048px;
+  height:100%;
+  margin-top: 50px;
+  border: 3px solid #d9d2da;
+  background-color: #d9d2da;
+  border-radius: 10px;
+}
+
+#wrap_cmenu{
+  overflow: hidden;
+  background-color: #d9d2da;
+}
+
+div.tag_ing{
+  width:92px;
+  margin-left: 50px;
+  margin-right: 0px;
+  margin-top: 15px;
+  float: left;
+}
+
+div.con_name{
+  width:800px;
+  float: left;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top:15px;
+  text-align: center;
+}
+
+div.bookmark{
+  float:left;
+  width:100px;
+}
+
+div.poster{
+  margin-left: 120px;
+  float:left;
+}
+
+div.c_artist{
+  font-family: kopubDotumM;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+div.c_date{
+  font-family: kopubDotumM;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+div.c_place{
+  font-family: kopubDotumM;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+div.c_seat{
+  font-family: kopubDotumM;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+div.c_info1{
+  font-family: kopubDotumL;
+  font-size: 20px;
+  color: black;
+  margin-left: 23px;
+  display: inline-block;
+}
+
+div.c_info2{
+  font-family: kopubDotumL;
+  font-size: 20px;
+  margin-left: 30px;
+  display: inline-block;
+}
+
+div.book_btn{
+  margin-top: 70px;
+  margin-left: 310px;
+}
+
+div.tab_con{
+  text-align: center;
+}
+
+img.img_ing{
+  width: 92px;
+  height: 42px;
+}
+
+p.c_name{
+  font-family: kopubBatangB;
+  font-size: 30px;
+  text-align: center;
+}
+
+img.mark{
+  /* background-color: none; */
+  width:80px;
+  height:85px;
+}
+
+img.pos{
+  width:260px;
+  height:350px;
+}
+
+img.seat{
+  width:50px;
+  height:30px;
+  float:left;
+  margin-right: 10px;
+}
+
+img.book{
+  width:242px;
+  height:60px;
+  display: inline-block;
+}
+
+ul.list_detail_menu{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+li.dmenu
+{
+  display:list-item;
+  float:left;
+}
+
+a.hide_blue{
+  text-decoration:none;
+}
+
+span.menu_line1{
+  color: white;
+  font-family: kopubBatangB;
+  font-size: 25px;
+  text-align:center;
+  margin-left:80px;
+  text-decoration:none;
+}
+
+span.menu_line2{
+  color: white;
+  font-family: kopubBatangB;
+  font-size: 25px;
+  text-align:center;
+  margin-left:135px;
+}
+
+.circle{
+  width:10px;
+  height:10px;
+  background: black;
+  border-radius: 50%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 12px;
+}
+
+p.date{
+  font-family: NanumSquareB;
+  font-size: 23px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+p.date_info{
+  font-family: NanumSquareR;
+  font-size: 20px;
+  margin-left: 70px;
+}
+
+section{
+  display:none;
+  background-color:#d9d2da;
+}
+/*--------------artist_info(팝업창)------------------*/
+body.artist_popup{
+  background-color: #d9d2da;
+}
+
+div.artist_infos{
+  padding-top: 20px;
+}
+
+div.art_left{
+  width: 200px;
+  height: 350px;
+  float: left;
+  text-align: center;
+}
+
+div.artist_picture{
+  width: 200px;
+  height: 160px;
+}
+
+div.artist_favorite{
+  width: 200px;
+  height: 140px;
+}
+
+div.artist_menu{
+  width: 500px;
+  height: 300px;
+}
+
+ul.artists{
+  list-style-type: none;
+}
+
+li.art_info{
+  font-family: NanumSquareB;
+  font-size: 16px;
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+input.popup_close{
+  /* margin-right: 20px; */
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+/* ***********************정렬************************** */
+div.concert_sort{
+  margin-top: 20px;
+  margin-bottom: 8px;
+  margin-left: 173px;
+  margin-right:173px;
+  width:1165px;
+  height:52px;
+  display:block;
+  overflow: hidden;
+}
+
+#allc_sort{
+  position: relative;
+  float:left;
+  display: inline;
+  width:300px;
+  color:#500867;
+  text-align: left;
+  font-family:'MobrRExtraB';
+  font-size:30px;
+  margin-bottom: 0px;
+}
+
+.animate
+{
+  text-decoration: none;
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 5px 10px;
+  margin: 0px 10px 20px 0px;
+  float: right;
+	border-radius: 8px;
+  font-family: NanumSquareB;
+	font-size: 18px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.action-button:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.action-button:active
+{
+  text-decoration: none;
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+.green
+{
+  text-decoration: none;
+  background-image: url('../images/sort/sort.jpg');
+	/* background-color: #ffffff; */
+	border-bottom: 5px solid #500867;
+	text-shadow: 0px -1px #500867;
+}
+
+.action-button-sort
+{
+	position: relative;
+	padding: 5px 10px;
+  margin: 0px 10px 20px 0px;
+  float: right;
+	border-radius: 8px;
+}
+
+
+.action-button-sort:active
+{
+  text-decoration: none;
+	transform: translate(0px,1px);
+  -webkit-transform: translate(0px,2px);
+}
+
+.sort_up
+{
+
+  margin-left: 10px;
+  margin-right: 2px;
+  margin-top: 4px;
+  width:48px;
+  height:38px;
+  background-image: url('../images/sort/up.png');
+  background-size:cover;
+}
+
+.sort_down
+{
+  width:48px;
+  margin-top: 4px;
+  height:38px;
+  background-size:cover;
+  background-image: url('../images/sort/down.png');
+}
+
+div.temp{
+  margin-top: 20px;
+  width:1519px;
+  height:70px;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'MobrRExtraB';
+  color:#ffaea0;
+}
+
+/* .temp_con2{
+  margin-left: 45px;
+  display:inline;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 70px;
+} */
+
+.menuli_con2{
+  margin-left: 160px;
+  display:inline;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 0px;
+}
+
+a.conm_font3 {
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: SNU;
+    /* padding: 0 20px 0 20px; */
+}
+
+
+div.ticketing_text{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  margin-right:50px;
+  width:1419px;
+  height:44px;
+  display:block;
+  overflow: hidden;
+}
+
+
+/* -------- mypage -------- */
+div.my_profile{
+  margin-left: 150px;
+  padding: 20px;
+  color:#9e809c;
+  width:380px;
+  height:460px;
+  /* background-color: #ffffff; */
+  /* opacity:0.4; */
+  border: 4px solid white;
+  border-radius: 50px;
+  text-align: center;
+  float: left;
+}
+
+div.my_profile2{
+  margin-left: 7px;
+  margin-top: 30px;
+  padding-top: 5px;
+  color:#9e809c;
+  width:320px;
+  height:180px;
+  /* background-color: #ffffff; */
+  /* opacity:0.4; */
+  border: 4px solid white;
+  border-radius: 50px;
+  text-align: center;
+  float:left;
+}
+
+div.con_box{
+  margin-left: 80px;
+  padding-top: 6px;
+  padding-left: 10px;
+  padding-right: 6px;
+  color:#9e809c;
+  width:320px;
+  height:100%;
+  background-color: #ffffff;
+  opacity:0.8;
+  border: 4px solid white;
+  border-radius: 50px;
+  text-align: center;
+  float: left;
+}
+
+
+h2.my_font{
+  margin-bottom: 20px;
+  padding-top: 20px;
+  text-align:center;
+  font-family:'kopubBatangB';
+  font-size:40px;
+  color: white;
+}
+
+p.my_font{
+  margin-bottom: 0;
+  margin-top: 20px;
+  margin-left: 150px;
+  text-align:center;
+  font-family:'kopubBatangB';
+  font-size:34px;
+  color: white;
+  float:left;
+}
+
+p.my_font1{
+  margin-bottom: 0;
+  margin-top: 20px;
+  margin-left: 332px;
+  text-align:center;
+  font-family:'kopubBatangB';
+  font-size:34px;
+  color: white;
+  float:left;
+}
+
+p.my_font2{
+  margin-bottom: 0;
+  margin-top: 20px;
+  margin-left: 150px;
+  text-align:center;
+  font-family:'kopubBatangB';
+  font-size:34px;
+  color: white;
+  float:left;
+}
+
+p.email{
+  font-family: 'kopubBatangB';
+  font-size:20px;
+  font-weight: bold;
+  margin-top: 15px;
+  color:white;
+}
+
+p.fuel{
+  font-family: 'kopubBatangB';
+  font-size:20px;
+  font-weight: bold;
+  color:white;
+}
+
+p.confont{
+  font-family:'kopubBatangB';
+  font-weight: bold;
+  font-size:28px;
+  margin-top: 10px;
+  color:#140719;
+  text-align: center;
+}
+
+p.confont1{
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family:'kopubBatangB';
+  font-weight: bold;
+  font-size:18px;
+  color:#140719;
+  text-align: center;
+}
+
+p.confont2{
+  font-family:'kopubBatangB';
+  font-weight: bold;
+  font-size:28px;
+  color:#140719;
+  text-align: center;
+}
+
+a.confont3{
+  font-family:'kopubDotumB';
+  font-size:15px;
+  color:#140719;
+  text-align: center;
+}
+
+a.confont3:hover, a.confont3:active{
+  color: #ffaea0;
+  text-decoration: none;
+}
+
+/* -------------- fuel -------------- */
+table.fuel_money{
+  border-color: #A5A5A5;
+  border-style: solid;
+  width:85%;
+  cellpadding: 5;
+  align-items: center;
+  border-collapse:collapse;
+  margin-top: 25px;
+  margin: auto;
+}
+
+#back_fuel{
+  background-image: url('../images/mainconcert/cpos_back.jpg')
+  /* background-size: 1536px 684px; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+div.fuel_table{
+  padding-top: 40px;
+}
+
+input.radiotype{
+  text-align: center;
+  font-family: 'kopubDotumB';
+  float:left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+input.radiotype2{
+  float:left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+input.creditbtn{
+  font-family:  'NanumSquareR';
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input.charge{
+  font-family:  'NanumSquareR';
+  font-size: 20px;
+  margin-left: 690px;
+  margin-right: 10px;
+}
+
+input.cancel{
+  font-family:  'NanumSquareR';
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p.fuelmenu{
+  font-family: 'NanumSquareB';
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 112px;
+}
+
+p.fuelfont{
+  font-family: 'NanumSquareB';
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p.fuelcon{
+  margin-bottom: 0px;
+  font-family: 'NanumSquareR';
+  font-size: 20px;
+  float: left;
+  margin-left: 15px;
+  margin-right: 30px;
+}
+
+
+/******************ticketing  */
+div.ticketbox{
+  width: 1160px;
+  height: 660px;
+  border-style: solid;
+  border-color: #896486;
+  border-width: 3px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.ticket_left{
+  background-image: url('../images/ticketing/left.jpg');
+  background-size: cover;
+  width: 280px;
+  height: 654px;
+  border-style: solid;
+  border-color: #896486;
+  border-width: 3px;
+  float: left;
+  position: relative;
+}
+
+div.ticket_right{
+  width: 874px;
+  height: 654px;
+  border-style: solid;
+  border-color: #896486;
+  border-width: 3px;
+  float: left;
+  position: relative;
+}
+
+div.right_right{
+  width: 480px;
+  height: 596px;
+  float:left;
+}
+
+div.roadmap{
+  width: 376px;
+  height: 270px;
+  border-style: solid;
+  border-color: #896486;
+  border-width: 2px;
+  margin: auto;
+}
+
+select{
+	display: block;
+	width: 100%;
+	margin-top: 30px;
+	padding: 10px;
+	background: #white;
+	font-family: 'kopubDotumB';
+	font-size: 18px;
+	cursor: pointer;
+}
+
+div.my_seat{
+  background-image: url('../images/ticketing/myseat.jpg');
+  background-size: cover;
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 376px;
+  height: 52px;
+  /* text-align: right; */
+}
+
+p.myseat{
+  font-family: 'kopubDotumM';
+  font-size: 22px;
+  color: white;
+  /* margin-right: 200px; */
+  margin-left:170px;
+  float:left;
+  padding-top: 11px;
+}
+
+p.myseat2{
+  font-family: 'kopubDotumM';
+  font-size: 22px;
+  color: white;
+  /* margin-right: 200px; */
+  margin-left:40px;
+  float:left;
+  padding-top: 11px;
+}
+
+div.right_name{
+  width: 874px;
+  height: 55px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #896486;
+  border-width: 1px;
+  float: left;
+  position: relative;
+}
+
+div.right_date{
+  width: 380px;
+  height: 296px;
+  float: left;
+}
+
+div.rdate_con{
+  border: none;
+  border-radius: 15%;
+  margin-left: 50px;
+  float: left;
+}
+
+div.right_fuel{
+  width: 380px;
+  height: 296px;
+}
+
+div.fuel_menu{
+  margin-top: 70px;
+  width: 190px;
+  text-align: center;
+  float: left;
+}
+
+div.fuel_info{
+  width: 190px;
+  margin-top: 70px;
+  text-align: center;
+  float:left;
+}
+
+div.book_poss{
+  width: 476px;
+}
+
+div.booking_btn{
+  width: 190px;
+  height: 53px;
+  margin-left: 215px;
+  margin-top: 70px;
+}
+
+p.fuel_need{
+  font-family: 'kopubDotumB';
+  font-weight: bold;
+  font-size: 22px;
+}
+p.fuel_remain{
+  font-family: 'kopubDotumB';
+  font-weight: bold;
+  font-size: 22px;
+}
+
+p.fm_need{
+  font-family: 'kopubDotumB';
+  font-size: 22px;
+  color: #9e809c;
+  /* float:left; */
+}
+p.fm_remain{
+  font-family: 'kopubDotumB';
+  font-size: 22px;
+  color: #9e809c;
+}
+
+p.fm_info{
+  font-family: 'kopubDotumB';
+  font-size: 22px;
+  color: #9e809c;
+  /* float: left;
+  text-align: center; */
+}
+
+div.right_left{
+  width: 380px;
+  height: 596px;
+  float:left;
+}
+
+div.right_choice{
+  width: 348px;
+}
+
+div.left_choice{
+  width: 520px;
+}
+
+p.rightname{
+  font-family: 'SNU';
+  font-size: 24px;
+  text-align: center;
+}
+
+p.choice_menu{
+  font-family: 'kopubDotumM';
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+div.left_poster{
+  width: 276px;
+  height: 310px;
+  padding: 43px;
+}
+
+div.left_artist{
+  width: 276px;
+  height: 242px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+div.left_hall{
+  width: 276px;
+  height: 112px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+p.left_bold{
+  font-family: 'SNU';
+  font-size: 21px;
+  color: white;
+  text-align: center;
+}
+
+p.left_light{
+  font-family: 'kopubDotumM';
+  font-size: 17px;
+  color: white;
+  margin-bottom: -5px;
+  text-align: center;
+}
+
+
+.radio-inline__input1 {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.radio-inline__label1 {
+    float:left;
+    background-color: #9e809c;
+    font-size: 20px;
+    color: white;
+    width: 280px;
+    font-family: kopubDotumB;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 30px;
+    margin-top:15px;
+    border-radius: 15px;
+    transition: all .2s;
+    text-align: center;
+}
+
+.radio-inline__input1:checked + .radio-inline__label1 {
+    background: #ffd6cf;
+    color: black;
+    text-shadow: 0 0 1px rgba(0,0,0,.7);
+}
+
+/**********************************/
+p.nonsear{
+  font-family: NanumSquareEB;
+  font-size: 30px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+div.cmain2{
+  margin-top: 150px;
+  margin-bottom: 5px;
+  margin-left: 159.5px;
+  margin-right: 159.5px;
+  width:1200px;
+  /* height:420px; */
+  height: auto;
+  display:block;
+  overflow: hidden;
+}
+
+/************************************************ */
+/* input[type=radio]{
+  display: none;
+} */
+
+/**
+ * How it should look when hovered
+ */
+
+ button.hvr-fade2-ticket{
+
+     font-family: 'NanumSquareB';
+     font-size: 23px;
+     /* margin-top: 40px;
+     margin-left: 608px; */
+     width:200px;
+     height: 60px;
+     border:none;
+     /* margin-left: -130px; */
+
+     background-color: #beaebf;
+
+     display: inline;
+     /* vertical-align: middle; */
+     -webkit-transform: perspective(1px) translateZ(0);
+     transform: perspective(1px) translateZ(0);
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+     overflow: hidden;
+     -webkit-transition-duration: 0.3s;
+     transition-duration: 0.3s;
+     -webkit-transition-property: color, background-color;
+     transition-property: color, background-color;
+   }
+
+ button.hvr-fade2-ticket:hover, .hvr-fade2-ticket:focus, .hvr-fade2-ticket:active {
+   /* background-image: url('../images/login/log_button.png'); */
+   background-color: #d37f95;
+   color: white;
+ }

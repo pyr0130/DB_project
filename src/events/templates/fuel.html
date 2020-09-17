@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset = "UTF-8"/>
+  <title>MY UNIVERSE</title>
+  <link rel = "stylesheet" href= "/static/css/bootstrap.css?ver=1"/>
+  <link href= "/static/css/mystyle.css?ver=2" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+  <script type = "text/javascript" src = "/static/js/jquery.js"></script>
+
+
+
+  <!--**************************************** 공통 메뉴 바 ************************************ -->
+  <div id = "concert_header_wrap">
+    <div class = "logo">
+      <a href="/"><img src= "/static/images/logo.png" width = "175" height = "auto" align="left"></a>
+    </div>
+    <div class = "menu">
+      <ul class = "menuul">
+        <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+        <li id = "main1"><a class = "mainfont" href="/concert">CONCERT</a></li>
+        <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+        <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+
+          {% if request.session.email != NULL %}
+          <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+          {% else %}
+          <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+          <li id = "main2"><p class="lr">/</p></li>
+          <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+          {% endif %}
+      </ul>
+    </div>
+   </div>
+
+
+  <!--***********************************************공통 메뉴 바 ***************************************** -->
+
+  <!--***********************************************메인 메뉴 바 ***************************************** -->
+
+    <hr class = "c_line" size="1" noshade align="center" width="1519px;" color="#beaebf" />
+
+    <div id="back_fuel">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+      <div id="fuel_table">
+        <p class="fuelmenu">#결제 수단 선택</p>
+        <table class="fuel_money" border="2">
+          <tr>
+            <th width="5px" style="background-color: #F0F0F0;"><p class="fuelfont">휴대폰/카드 결제</p></th>
+            <th width="10px">
+              <form>
+                <input class="creditbtn" type="button" name="credit" value="휴대폰 청구서"/>
+                <input class="creditbtn" type="button" name="credit" value="신용 카드"/>
+              </form>
+            </th>
+          </tr>
+          <tr>
+            <td style="background-color: #F0F0F0;"><p class="fuelfont">기타 결제</p></td>
+              <td>
+                <form>
+                  <input class="creditbtn" type="button" name="credit" value="계좌이체"/>
+                  <input class="creditbtn" type="button" name="credit" value="카카오 페이"/>
+                  <input class="creditbtn" type="button" name="credit" value="OK 캐쉬백"/>
+                </form>
+              </td>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <br/>
+      <br/>
+
+      <p class="fuelmenu">#연료 충전</p>
+    <div id="fuel_table"></div>
+    <table class="fuel_money" border="2">
+      <tr>
+        <th width="60px" style="background-color: #F0F0F0;"><p class="fuelfont">총 잔여 연료</p></th>
+        <th width="60px"><p class="fuelcon">{{fuel}} fuel</p></th>
+      </tr>
+      <tr>
+        <form action="" name="fuelcharge" method="post">
+        <td style="background-color: #F0F0F0;"><p class="fuelfont">충전 금액 선택</p></td>
+          <td>
+              {% csrf_token %}
+              <input class="radiotype" type="radio" name="fuel" value=50 /><p class="fuelcon">50 fuel</p>
+              <input class="radiotype" type="radio" name="fuel" value=70 /><p class="fuelcon">70 fuel</p>
+              <input class="radiotype" type="radio" name="fuel" value=90 /><p class="fuelcon">90 fuel</p>
+              <input class="radiotype" type="radio" name="fuel" value=110 /><p class="fuelcon">110 fuel</p>
+              <input class="radiotype" type="radio" name="fuel" value=130 /><p class="fuelcon">130 fuel</p>
+              <input class="radiotype" type="radio" name="fuel" value=150 /><p class="fuelcon">150 fuel</p>
+
+            </td>
+          </tr>
+        </table>
+        <br/>
+        <br/>
+        <input class="charge" type="submit" name="credit" value="충전하기" />
+        <input class="cancel" type="button" name="credit" value="취소하기"/>
+      </form>
+      </div>
+
+      <br/>
+      <br/>
+    </div>
+    </body>
+</html>

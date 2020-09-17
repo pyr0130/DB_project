@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang = "ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+    <meta charset = "UTF-8"/>
+    <title>MY UNIVERSE</title>
+    <link rel = "stylesheet" href= "/static/css/bootstrap.css"/>
+    <link href= "/static/css/mystyle.css" type="text/css" rel="stylesheet"/>
+
+  </head>
+
+  <body>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type = "text/javascript" src = "/static/js/bootstrap.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <!-- {% if mess%}
+      <button id = "trigg" style = "display:none"></button>
+    {% endif %} -->
+
+    <div id="layer_ad">
+      {% if error %}
+          {{ error }}
+      {% endif %}
+    </div>
+
+      <div id = "header_wrap">
+        <div class = "logo">
+          <a href="/"><img src= "/static/images/logo.png" width = "175" height = "50" align="left"></a>
+        </div>
+        <div class = "menu">
+          <ul class = "menuul">
+            <li id = "main1"><a class = "mainfont" href="/info">INFO</a></li>
+            <li id = "main1"><a class = "mainfont" href="/conall/all">CONCERT</a></li>
+            <li id = "main1"><a class = "mainfont" href="/menuticket">TICKETING</a></li>
+            <li id = "main1"><a class = "mainfont" href="/mypage">MY PAGE</a></li>
+
+
+              {% if request.session.email != NULL %}
+              <li id = "main2"><a class = "logreg" href="/logout">로그아웃</a></li>
+              {% else %}
+              <li id = "main2"><a class = "logreg" href="/login">로그인</a></li>
+              <li id = "main2"><p class="lr">/</p></li>
+              <li id = "main2"><a class = "logreg" href="/register">회원가입</a></li>
+              {% endif %}
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div id = "main_wrap">
+        <div class = "boot_pos">
+
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+
+
+          <div class="carousel-inner" style = "float:left;">
+
+              <div class="carousel-item active" >
+                <center><p class="font">LOVERS:</p></center><td>
+                <center><p class="font">What is your love?</p></center>
+                <center><img class="slide" src="/static/images/mainscreen/pos1.png" alt="First slide"></center>
+              </div>
+
+              <div class="carousel-item" style = "float:left;">
+                  <center><p class="font">NU'EST CONCERT</p></center><td>
+                  <center><p class="font">&lt;Segno&gt; IN SEOUL</p></center>
+                <center><img class="slide" src="/static/images/mainscreen/pos2.png" alt="Second slide"></center>
+              </div>
+
+              <div class="carousel-item" style = "float:left;">
+                  <center><p class="font">노래가 슬퍼도</p></center><td>
+                  <center><p class="font">인생은 아름답기를</p></center>
+                <center><img class="slide" src="/static/images/mainscreen/pos3.png" alt="Third slide"></center>
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"  >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <div class= "main_search">
+          <form action="/search" method="post">
+            {% csrf_token %}
+            <input class = 'sear' name="search_key" type='text' placeholder="Search"/>
+            <input class = 'sear_b' type="submit" value=""/>
+          </form>
+        </div>
+
+      </div>
+
+
+
+  </body>
+</html>
